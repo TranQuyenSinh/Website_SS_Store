@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Giỏ hàng</title>
+		<script
+			src="https://kit.fontawesome.com/e5296c717e.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="cart.css" />
+	</head>
+	<body>
+		<div class="header">
+			<div class="header_container">
+				<a href="/">
+					<img
+						src="https://img.vn/uploads/version/img24-png-20190726133727cbvncjKzsQ.png"
+						class="header_logo"
+					/>
+				</a>
+				<div class="header_search">
+					<input
+						type="text"
+						placeholder="Search..."
+						class="header_search_bar"
+					/>
+					<div class="header_search_icons">
+						<a href="/">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</a>
+					</div>
+				</div>
+				<div class="header_cart">
+					<a href="https://">
+						<i class="fa-solid fa-cart-shopping"> </i>
+					</a>
+				</div>
+				<div class="header_user none">
+					<img
+						src="https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360"
+					/>
+					<p>sinh</p>
+					<div class="header_user_menu_option">
+						<div class="header_user_menu_option_1">
+							<a href="link/to/profile">Profile</a>
+						</div>
+						<div class="header_user_menu_option_2">
+							<a href="link/to/logout">Đăng xuất</a>
+						</div>
+					</div>
+				</div>
+				<div class="header_user">
+					<img
+						src="https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg"
+					/>
+
+					<div class="header_user_menu_option">
+						<div class="header_user_menu_option_1">
+							<a href="/dangnhap.html">Đăng nhập</a>
+						</div>
+						<div class="header_user_menu_option_2">
+							<a href="/dangky.html">Đăng ký</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1>Giỏ hàng của bạn</h1>
+
+		<table>
+			<label for="check-all">Chọn tất cả</label>
+			<input type="checkbox" id="check-all" />
+			<thead>
+				<tr>
+					<th></th>
+					<th>Sản phẩm</th>
+					<th>Số lượng</th>
+					<th>Giá</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" class="item-checkbox" /></td>
+					<td>Áo phông nam</td>
+					<td>
+						<div class="add-to-cart_cal">
+							<button class="add-to-cart_minus">-</button>
+							<input type="text" value="1" class="add-to-cart_text" />
+							<button class="add-to-cart_plus">+</button>
+						</div>
+					</td>
+					<td class="price">$19.99</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="item-checkbox" /></td>
+					<td>Áo khoác nữ</td>
+					<td>
+						<div class="add-to-cart_cal">
+							<button class="add-to-cart_minus">-</button>
+							<input type="text" value="1" class="add-to-cart_text" />
+							<button class="add-to-cart_plus">+</button>
+						</div>
+					</td>
+					<td class="price">$49.99</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" class="item-checkbox" /></td>
+					<td>Quần jean nam</td>
+					<td>
+						<div class="add-to-cart_cal">
+							<button class="add-to-cart_minus">-</button>
+							<input type="text" value="1" class="add-to-cart_text" />
+							<button class="add-to-cart_plus">+</button>
+						</div>
+					</td>
+					<td class="price">$29.99</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="buy-container">
+			<div class="total">Tổng tiền: $0.00</div>
+			<button class="buy-button">Mua hàng</button>
+		</div>
+		<footer>
+			<p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
+		</footer>
+		<script src="cart.js"></script>
+	</body>
+</html>

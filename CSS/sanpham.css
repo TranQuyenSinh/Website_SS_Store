@@ -1,0 +1,242 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+.container {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.product {
+    margin: 20px 0 ;
+    width: 100%;
+    display:flex;
+    /* height: 630px; */
+    background-color: #fff;
+    border-radius:5px;
+    overflow: hidden;
+    padding:10px;
+}
+.product_left {
+    width: 50%;
+}
+.product_left_img {
+    width: 90%;
+    
+}
+.product_right {
+    width: 50%;
+}
+.product_right_title {
+    font-size: 20px;
+}
+.product_right_stats {
+    display: flex;
+    padding:12px;
+    
+}
+.product_right_rating {
+    font-size: 15px;
+    border-right: 1px solid #f5f5f5;
+    margin-right: 15px;
+}
+.product_right_sold {
+    font-size: 15px;
+}
+.product_right_price {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #fafafa;
+    padding-left: 15px;
+    margin: 15px 0;
+}
+.product_right_price p {
+    font-size:30px;
+    color:#ee4d2d;
+    font-weight: 700;
+}
+.product_right_.add-to-cart { 
+
+}
+.add-to-cart_cal {
+    display: flex;
+    height: 32px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+.add-to-cart_minus {
+    min-width: 32px;
+}
+.add-to-cart_text {
+    width:40px;
+    text-align: center;
+}
+.add-to-cart_plus {
+    min-width: 32px;
+}
+.add-to-cart_buy {
+    height: 50px;
+    padding:10px;
+    margin-right: 50px;
+    cursor: pointer;
+    background-color:#1bd1fe;
+    border:none;
+    font-weight: 4s00;
+}
+.add-to-cart_buy:hover {
+    opacity:0.9;
+}
+.add-to-cart_add {
+    height: 50px;
+    cursor: pointer;
+    padding:10px;
+    background-color: #84c2ea;
+    border:none;
+}
+.add-to-cart_add:hover {
+    opacity:0.8;
+}
+label{ 
+    font-size: 20px;
+    font-weight: bold;
+}
+.description-container {
+    width: 100%;
+    padding:20px;
+    background-color:#fff;
+}
+.description {
+    margin-top: 20px;
+}
+.comments {
+    width: 100%;
+    background-color:#fff; 
+    margin-top: 25px;
+    border-radius: 3px;
+    overflow: hidden;
+    padding:20px;
+    margin-bottom: 25px;
+}
+.comment {
+    display: flex;
+    flex-direction: column;
+   
+    margin-top: 15px;
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 10px;
+}
+.comment_info {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.comment_avatar {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+}
+.comment_name {
+    font-weight: 600;
+}
+.comment_content {
+    font-size: 14px;
+    margin-left: 15px;
+    text-align: left;
+}
+.suggest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 640px;
+    background-color: #fff;
+    border-radius:5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .suggest_title {
+    width: 100%;
+    padding: 20px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid #75a0df;
+  }
+  .suggest_title_p {
+    color: #12d2fe;
+    font-weight: bold;
+  }
+  .suggest_container {
+    max-height: 520px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:20px;
+    overflow: hidden;
+  }
+  .suggest_item {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 160px;
+    height: 210px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ;
+  }
+  .suggest_item:hover {
+    transform: scale(1.02);
+    border: 1px solid #5eb3ea;
+  }
+  .suggest_item_img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .suggest_item_p {
+    font-size:12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Số dòng tối đa */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị dấu "..." nếu vượt quá độ dài */
+    margin:5px 0;
+    padding: 0 5px;
+  }
+  .suggest_item_text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .suggest_item_price {
+    color:#56b8ed;
+    font-size: 15px;
+  }
+  .suggest_item_amount {
+    font-size: 12px;
+  }
+  .suggest_item_footer {
+    margin-top: 12px;
+    width: 300px;
+    height:45p;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#f5f5f5;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  .suggest_item_footer:hover {
+    opacity: 0.8;
+  }
