@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
-		<script
-			src="https://kit.fontawesome.com/e5296c717e.js"
-			crossorigin="anonymous"
-		></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://kit.fontawesome.com/e5296c717e.js"
+		crossorigin="anonymous"
+	></script>
+	
 </head>
 <body>
     <?php
@@ -71,7 +72,6 @@
 					</div>
 					<div class="category_container">
                         <?php
-                        //{$row['TenLoaiSP']}
                             $sql = "select * from loaisanpham";
                             $list_loaisp = $connect->query($sql);
                             while($row = $list_loaisp->fetch_array(MYSQLI_ASSOC)) {
@@ -95,7 +95,8 @@
 					</div>
 					<div class="top_container">
                         <?php
-                            $sql = 'select * from SanPham order by SoLuongDaBan Desc';
+							$limit = 20;
+                            $sql = "select * from SanPham order by SoLuongDaBan Desc LIMIT $limit";
                             $list = $connect->query($sql);
                             while($row = $list->fetch_array(MYSQLI_ASSOC)){
                                 echo "
@@ -108,7 +109,7 @@
                                         </div>
                                         <p class='top_item_p'>{$row['TenSP']}</p>
                                         <div class='top_item_text'>
-                                            <p class='top_item_price'>".formatMoney($row['DonGia'])."</p>
+                                            <p class='top_item_price'>".number_format($row['DonGia'])." đ"."</p>
                                             <p class='top_item_amount'>Đã bán {$row['SoLuongDaBan']}</p>
                                         </div>
                                     </div>
@@ -123,110 +124,7 @@
 						<p class="suggest_title_p">Gợi ý hôm nay</p>
 					</div>
 					<div class="suggest_container">
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
-						<div class="suggest_item">
-							<img
-								src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0"
-								class="suggest_item_img"
-							/>
-							<p class="suggest_item_p">
-								Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-							</p>
-							<div class="suggest_item_text">
-								<p class="suggest_item_price">100.000đ</p>
-								<p class="suggest_item_amount">đã bán 25</p>
-							</div>
-						</div>
+						
 					</div>
 					<div class="suggest_item_footer">
 						<p>Xem thêm</p>
@@ -238,5 +136,6 @@
 			<p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
 		</footer>
 		<script src="../js/index.js"></script>
+		<script src="../JS/index_loadmore.js"></script>
 </body>
 </html>

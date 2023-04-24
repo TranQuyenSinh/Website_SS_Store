@@ -1,59 +1,84 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.header_cart {
+  display: none;
+}
+.header_user {
+  display: none;
 }
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    height: 100vh;
+  min-height: 100vh;
 }
 form {
-    width: 800px;
-    /* height: 500px; */
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    width: 300px;
-    margin: auto;
-    margin-top: 50px;
-    margin: auto;
-    /* height: 100vh; */
+  /* height: 500px; */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  margin: auto;
+  /* height: 100vh; */
 }
-input[type="text"],
+.form_label {
+  margin-top: 12px;
+}
+.form_section {
+  margin-bottom: 16px;
+}
+form input[type="text"],
 input[type="password"] {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #000;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 2px solid #1bb9a6;
+  outline: none;
 }
 input[type="submit"],
 input[type="button"] {
-    background-color: #04d3fe;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #04d3fe;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
 }
-input[type="submit"]:hover,
+.form input[type="submit"]:hover,
 input[type="button"]:hover {
-    background-color: #5bb6ec;
+  background-color: #5bb6ec;
 }
-
+.error_msg{
+  color: red;
+  display: none;
+}
+input.invalid {
+  border: 2px solid red;
+}
+input.invalid + .error_msg{
+  display: block;
+}
 footer {
-    /* position: absolute; */
-    bottom: 0;
+  /* position: absolute; */
+  bottom: 0;
 }
 .buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttons a {
+  color: black;
+  border: 2px solid #04d3fe;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 16px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+}
+.buttons a:hover {
+  color: white;
+  background-color: #04d3fe;
 }

@@ -34,7 +34,7 @@
                     <div class="header_user_menu_option_1">
                         <a href="link/to/profile">Profile</a>
                     </div>
-                    <div class="header_user_menu_option_2">
+                    <div class="header_user_menu_option_1">
                         <a href="link/to/logout">Đăng xuất</a>
                     </div>
                 </div>
@@ -46,10 +46,10 @@
 
                 <div class="header_user_menu_option">
                     <div class="header_user_menu_option_1">
-                        <a href="/dangnhap.html">Đăng nhập</a>
+                        <a href="../php/dangnhap.php">Đăng nhập</a>
                     </div>
-                    <div class="header_user_menu_option_2">
-                        <a href="/dangky.html">Đăng ký</a>
+                    <div class="header_user_menu_option_1">
+                        <a href="../php/dangky.php">Đăng ký</a>
                     </div>
                 </div>
             </div>
