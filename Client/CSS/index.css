@@ -4,18 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
-/* position: relative; */
-  width: 100vw;
-  height: 100%;
-  display:flex;
-  /* justify-content:center; */
-  align-items: center;
-  flex-direction: column;
-  background-color: #f5f5f5;
-  overflow-x: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+body {/* position: relative; */width: 100vw;height: 100%;min-height: 100vh;display:flex;/* justify-content:center; */align-items: center;flex-direction: column;background-color: #f5f5f5;overflow-x: hidden;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 p {
 color: #333;
 }
@@ -39,6 +28,7 @@ color:#000;
   display: flex;
   align-items: center;
   width: 100%;
+  flex: 1;
 }
 .header_logo {
   cursor: pointer;
@@ -102,9 +92,8 @@ color:#000;
   margin-left: 10px;
   cursor: pointer;
 }
-/* Không có user */
-.header_user.none{
- display:none;
+.header_user p {
+  
 }
 .header_user img{
   width: 30px;
@@ -158,6 +147,7 @@ background-color: #f5f5f5;
   align-items: center;
   flex-direction: column;
   max-width: 1200px;
+  flex: 1;
 }
 .content {
   width: 100%;
@@ -390,10 +380,10 @@ background-color: #f5f5f5;
 .suggest_item_p {
   font-size: 15px;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Số dòng tối đa */
+  -webkit-line-clamp: 2; /* Sá»‘ dÃ²ng tá»‘i Ä‘a */
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis; /* Hiển thị dấu "..." nếu vượt quá độ dài */
+  text-overflow: ellipsis; /* Hiá»ƒn thá»‹ dáº¥u "..." náº¿u vÆ°á»£t quÃ¡ Ä‘á»™ dÃ i */
   margin:5px 0;
   padding: 0 10px;
   height: 3em;
@@ -441,7 +431,7 @@ footer {
   background-color: #fff;
 }
 
-/*------------Hiệu ứng-----------*/
+/*------------Hiá»‡u á»©ng-----------*/
 .transition{
   opacity: 0;
   transition: all 0.3s ease-in-out;
@@ -449,7 +439,7 @@ footer {
 .transition.show{
   opacity: 1;
 }
-/* Áp dụng kiểu riêng cho các thiết bị iPad */
+/* Ãp dá»¥ng kiá»ƒu riÃªng cho cÃ¡c thiáº¿t bá»‹ iPad */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .header_search {
       min-width: 70%;
@@ -463,7 +453,7 @@ footer {
   }
 }
 
-/* Áp dụng kiểu riêng cho các thiết bị điện thoại */
+/* Ãp dá»¥ng kiá»ƒu riÃªng cho cÃ¡c thiáº¿t bá»‹ Ä‘iá»‡n thoáº¡i */
 @media only screen and (max-width: 767px) {
   .header_search {
       min-width: 50%;

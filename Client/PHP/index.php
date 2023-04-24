@@ -1,141 +1,90 @@
+<?php
+session_start();
+ob_start();
+include_once 'connect.php';
+include_once 'function.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script
-		src="https://kit.fontawesome.com/e5296c717e.js"
-		crossorigin="anonymous"
-	></script>
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e5296c717e.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
-<body>
-    <?php
-        include_once 'connect.php';
-        include_once 'function.php';
-        include_once 'header.php';
-    ?>
-    <div class="container">
-			<div class="content">
-				<div class="banner-container">
-					<div class="banner-slides">
-                        <?php
-                            $dir = '../images/banner';
-                            $first = True;
-                            $banner_count = 0;
-                            // Lấy danh sách tất cả các tập tin và thư mục trong thư mục
-                            $fileList = scandir($dir);
-                            
-                            foreach ($fileList as $file) {
-                                // nếu không phải file(folder) thì bỏ qua
-                                if (!is_file($dir.'/'.$file))
-                                    continue;
-                                if ($first == True) {
-                                    echo "
-                                    <img
-                                        src='../images/banner/$file'
-                                        class='slide active'
-                                    />
-                                ";
-                                $first = False;
-                                }else{
-                                    echo "
-                                    <img
-                                        src='../images/banner/$file'
-                                        class='slide'
-                                    />
-                                ";
-                                }
-                                $banner_count++;
-                            }
-                        ?>
-					</div>
-					<div class="dots">
-                        <?php
-                            for ($i=0;$i<$banner_count;$i++) {
-                                if ($i == 0)
-                                    echo "<span class='dot active'></span>";
-                                else 
-                                    echo "<span class='dot'></span>";
-                            }
-                        ?>
-					</div>
-				</div>
 
-				<div class="category">
-					<div class="category_title">
-						<p>Danh mục</p>
-					</div>
-					<div class="category_container">
-                        <?php
-                            $sql = "select * from loaisanpham";
-                            $list_loaisp = $connect->query($sql);
-                            while($row = $list_loaisp->fetch_array(MYSQLI_ASSOC)) {
-                                echo "
-                                    <div class='category_item'>
-                                    <img
-                                        src='../images/loaisp/{$row['HinhAnh']}'
-                                        class='category_img'
-                                    />
-                                    <p class='category_p'>".$row['TenLoaiSP']."</p>
+<body>
+    <div class="header">
+        <div class="header_container">
+            <a href="index.php">
+                <img src="../images/logo2.png" class="header_logo" />
+            </a>
+            <div class="header_search">
+                <input type="text" placeholder="Search..." class="header_search_bar" />
+                <div class="header_search_icons">
+                    <a href="/">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+            </div>
+            <?php
+            // đã login
+            if (isset($_SESSION['MaKhachHang'])) {
+                echo "
+                        <div class='header_cart'>
+                            <a href='https://'>
+                                <i class='fa-solid fa-cart-shopping'> </i>
+                            </a>
+                        </div>
+                        <div class='header_user'>
+                            <img src='https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360' />
+                            <p>{$_SESSION['TenHienThi']}</p>
+                            <div class='header_user_menu_option'>
+                                <div class='header_user_menu_option_1'>
+                                    <a href='link/to/profile'>Profile</a>
                                 </div>
-                                ";
-                            }
-                        ?>
-						
-					</div>
-				</div>
-				<div class="top">
-					<div class="top_title">
-						<p>Best seller</p>
-					</div>
-					<div class="top_container">
-                        <?php
-							$limit = 20;
-                            $sql = "select * from SanPham order by SoLuongDaBan Desc LIMIT $limit";
-                            $list = $connect->query($sql);
-                            while($row = $list->fetch_array(MYSQLI_ASSOC)){
-                                echo "
-                                <a href='#'>
-                                    <div class='top_item'>
-                                        <div class='top_item_img'>
-                                            <img
-                                            src='../images/sanpham/{$row['HinhAnh']}'
-                                            />
-                                        </div>
-                                        <p class='top_item_p'>{$row['TenSP']}</p>
-                                        <div class='top_item_text'>
-                                            <p class='top_item_price'>".number_format($row['DonGia'])." đ"."</p>
-                                            <p class='top_item_amount'>Đã bán {$row['SoLuongDaBan']}</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                ";
-                            }
-                        ?>
-					</div>
-				</div>
-				<div class="suggest">
-					<div class="suggest_title">
-						<p class="suggest_title_p">Gợi ý hôm nay</p>
-					</div>
-					<div class="suggest_container">
-						
-					</div>
-					<div class="suggest_item_footer">
-						<p>Xem thêm</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
-		</footer>
-		<script src="../js/index.js"></script>
-		<script src="../JS/index_loadmore.js"></script>
+                                <div class='header_user_menu_option_1'>
+                                    <a href='dangxuat.php'>Đăng xuất</a>
+                                </div>
+                            </div>
+                        </div>
+                        ";
+            } else {
+                echo "
+                    <div class='header_user'>
+                        <img src='https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg' />
+        
+                        <div class='header_user_menu_option'>
+                            <div class='header_user_menu_option_1'>
+                                <a href='index.php?do=dangnhap'>Đăng nhập</a>
+                            </div>
+                            <div class='header_user_menu_option_1'>
+                                <a href='index.php?do=dangky'>Đăng ký</a>
+                            </div>
+                        </div>
+                    </div>
+                    ";
+            }
+            ?>
+
+
+        </div>
+    </div>
+    <div class="container">
+        <?php
+            $do = isset($_GET['do']) ? $_GET['do']:'home';
+            include $do . '.php';
+        ?>
+    </div>
+    <footer>
+        <p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
+    </footer>
+    
 </body>
+
 </html>

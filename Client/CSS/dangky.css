@@ -4,9 +4,6 @@
 .header_user {
   display: none;
 }
-body {
-  min-height: 100vh;
-}
 form {
   /* height: 500px; */
   background-color: #fff;
