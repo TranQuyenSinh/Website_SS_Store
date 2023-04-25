@@ -85,7 +85,7 @@ color:#000;
   color: #fff;
 }
 .header_user {
-  width: 100px;
+  width: 200px;
   position: relative;
   display: flex;
   align-items: center;
@@ -93,7 +93,9 @@ color:#000;
   cursor: pointer;
 }
 .header_user p {
-  
+  width: 200px;
+  color: white;
+  font-weight: 500;
 }
 .header_user img{
   width: 30px;
@@ -275,7 +277,7 @@ background-color: #f5f5f5;
   overflow: hidden;
 }
 .top_item_img::before {
-  content: "Click để xem chi tiết";
+  content: "Click Ä‘á»ƒ xem chi tiáº¿t";
   position: absolute;
   padding: 0 5px;
   bottom: -40px;
@@ -380,10 +382,10 @@ background-color: #f5f5f5;
 .suggest_item_p {
   font-size: 15px;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Sá»‘ dÃ²ng tá»‘i Ä‘a */
+  -webkit-line-clamp: 2; /* SÃ¡Â»â€˜ dÃƒÂ²ng tÃ¡Â»â€˜i Ã„â€˜a */
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis; /* Hiá»ƒn thá»‹ dáº¥u "..." náº¿u vÆ°á»£t quÃ¡ Ä‘á»™ dÃ i */
+  text-overflow: ellipsis; /* HiÃ¡Â»Æ’n thÃ¡Â»â€¹ dÃ¡ÂºÂ¥u "..." nÃ¡ÂºÂ¿u vÃ†Â°Ã¡Â»Â£t quÃƒÂ¡ Ã„â€˜Ã¡Â»â„¢ dÃƒÂ i */
   margin:5px 0;
   padding: 0 10px;
   height: 3em;
@@ -431,7 +433,7 @@ footer {
   background-color: #fff;
 }
 
-/*------------Hiá»‡u á»©ng-----------*/
+/*------------HiÃ¡Â»â€¡u Ã¡Â»Â©ng-----------*/
 .transition{
   opacity: 0;
   transition: all 0.3s ease-in-out;
@@ -439,7 +441,7 @@ footer {
 .transition.show{
   opacity: 1;
 }
-/* Ãp dá»¥ng kiá»ƒu riÃªng cho cÃ¡c thiáº¿t bá»‹ iPad */
+/* ÃƒÂp dÃ¡Â»Â¥ng kiÃ¡Â»Æ’u riÃƒÂªng cho cÃƒÂ¡c thiÃ¡ÂºÂ¿t bÃ¡Â»â€¹ iPad */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .header_search {
       min-width: 70%;
@@ -453,7 +455,7 @@ footer {
   }
 }
 
-/* Ãp dá»¥ng kiá»ƒu riÃªng cho cÃ¡c thiáº¿t bá»‹ Ä‘iá»‡n thoáº¡i */
+/* ÃƒÂp dÃ¡Â»Â¥ng kiÃ¡Â»Æ’u riÃƒÂªng cho cÃƒÂ¡c thiÃ¡ÂºÂ¿t bÃ¡Â»â€¹ Ã„â€˜iÃ¡Â»â€¡n thoÃ¡ÂºÂ¡i */
 @media only screen and (max-width: 767px) {
   .header_search {
       min-width: 50%;
