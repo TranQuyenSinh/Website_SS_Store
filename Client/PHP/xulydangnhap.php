@@ -16,6 +16,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             // Đăng ký SESSION
             $_SESSION['MaKhachHang'] = $row['MaKhachHang'];
             $_SESSION['TenHienThi'] = $row['TenHienThi'];
+            $_SESSION['GioiTinh'] = $row['GioiTinh'];
+            $_SESSION['DienThoai'] = $row['DienThoai'];
+            $_SESSION['DiaChi'] = $row['DiaChi'];
+            $_SESSION['Avatar'] = $row['Avatar'];
             Header("Location: index.php");
         } 
     else {

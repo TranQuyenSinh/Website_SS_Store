@@ -35,6 +35,10 @@ include_once 'function.php';
             <?php
             // đã login
             if (isset($_SESSION['MaKhachHang'])) {
+                if (isset($_SESSION['Avatar'])) 
+                    $avatar_path = "../images/avatar_khachhang/{$_SESSION['Avatar']}";
+                else
+                    $avatar_path = "../images/avatar_khachhang/0.jpg";
                 echo "
                         <div class='header_cart'>
                             <a href='https://'>
@@ -42,7 +46,7 @@ include_once 'function.php';
                             </a>
                         </div>
                         <div class='header_user'>
-                            <img src='https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360' />
+                            <img src='$avatar_path' />
                             <p>{$_SESSION['TenHienThi']}</p>
                             <div class='header_user_menu_option'>
                                 <a href='index.php?do=profile'>
