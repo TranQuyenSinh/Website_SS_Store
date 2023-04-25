@@ -45,12 +45,16 @@ include_once 'function.php';
                             <img src='https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360' />
                             <p>{$_SESSION['TenHienThi']}</p>
                             <div class='header_user_menu_option'>
-                                <div class='header_user_menu_option_1'>
-                                    <a href='link/to/profile'>Profile</a>
-                                </div>
-                                <div class='header_user_menu_option_1'>
-                                    <a href='dangxuat.php'>Đăng xuất</a>
-                                </div>
+                                <a href='index.php?do=profile'>
+                                    <div class='header_user_menu_option_1'>
+                                        Profile
+                                    </div>
+                                </a>
+                                <a href='dangxuat.php'>
+                                    <div class='header_user_menu_option_1'>
+                                        Đăng xuất
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         ";
@@ -60,12 +64,16 @@ include_once 'function.php';
                         <img src='https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg' />
         
                         <div class='header_user_menu_option'>
-                            <div class='header_user_menu_option_1'>
-                                <a href='index.php?do=dangnhap'>Đăng nhập</a>
-                            </div>
-                            <div class='header_user_menu_option_1'>
-                                <a href='index.php?do=dangky'>Đăng ký</a>
-                            </div>
+                            <a href='index.php?do=dangnhap'>
+                                <div class='header_user_menu_option_1'>
+                                    Đăng nhập
+                                </div>
+                            </a>
+                            <a href='index.php?do=dangky'>
+                                <div class='header_user_menu_option_1'>
+                                    Đăng ký
+                                </div>
+                            </a>
                         </div>
                     </div>
                     ";
@@ -77,14 +85,14 @@ include_once 'function.php';
     </div>
     <div class="container">
         <?php
-            $do = isset($_GET['do']) ? $_GET['do']:'home';
-            include $do . '.php';
+        $do = isset($_GET['do']) ? $_GET['do'] : 'home';
+        include $do . '.php';
         ?>
     </div>
     <footer>
         <p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
     </footer>
-    
+
 </body>
 
 </html>
