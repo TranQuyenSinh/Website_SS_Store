@@ -53,13 +53,13 @@
             $list_loaisp = $connect->query($sql);
             while ($row = $list_loaisp->fetch_array(MYSQLI_ASSOC)) {
                 echo "
-                                    <div class='category_item'>
-                                    <img
-                                        src='../images/loaisp/{$row['HinhAnh']}'
-                                        class='category_img'
-                                    />
-                                    <p class='category_p'>" . $row['TenLoaiSP'] . "</p>
-                                </div>
+                    <div class='category_item'>
+                    <img
+                        src='../images/loaisp/{$row['HinhAnh']}'
+                        class='category_img'
+                    />
+                    <p class='category_p'>" . $row['TenLoaiSP'] . "</p>
+                </div>
                                 ";
             }
             ?>
@@ -77,7 +77,7 @@
             $list = $connect->query($sql);
             while ($row = $list->fetch_array(MYSQLI_ASSOC)) {
                 echo "
-                                <a href='#'>
+                                <a href='index.php?do=sanpham&id={$row['MaSP']}'>
                                     <div class='top_item'>
                                         <div class='top_item_img'>
                                             <img

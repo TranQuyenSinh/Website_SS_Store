@@ -17,7 +17,7 @@ btnLoadMore.addEventListener("click", function () {
             "vi-VN",
             { style: "currency", currency: "VND" }
           );
-          var html = `  <a href="sanpham.php/?id=${data[i].MaSP}">
+          var html = `  <a href="index.php?do=sanpham&id=${data[i].MaSP}">
                             <div class="suggest_item">
                                 <img src="../images/sanpham/${data[i].HinhAnh}" class="suggest_item_img" />
                                 <p class="suggest_item_p">${data[i].TenSP}</p>
