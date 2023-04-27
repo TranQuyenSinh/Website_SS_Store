@@ -16,6 +16,11 @@
   }
 a {
     text-decoration: none;
+    color:#000;
+    height: 100%;
+}
+h1 {
+    margin-top: 20px;
 }
 .header {
     min-width: 100%;
@@ -46,7 +51,7 @@ a {
     cursor: pointer;
     width: 150px;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin-right: 10px;
   }
   
@@ -113,87 +118,81 @@ a {
   .header_user.none {
     display: none;
   }
-
-  form {
-    /* height: 500px; */
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    width: 500px;
-    margin: auto;
-    /* height: 100vh; */
-  }
-  .form_label {
-    margin-top: 12px;
-  }
-  .form_section {
-    margin-bottom: 16px;
-  }
-  form input[type="text"],
-  input[type="password"] {
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-    border: 2px solid #1bb9a6;
-    outline: none;
-  }
-  input[type="submit"],
-  input[type="button"] {
-    background-color: #04d3fe;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.2s ease-in-out;
-  }
-  .form input[type="submit"]:hover,
-  input[type="button"]:hover {
-    background-color: #5bb6ec;
-  }
-  .error_msg{
-    color: red;
-    display: none;
-  }
-  input.invalid {
-    border: 2px solid red;
-  }
-  input.invalid + .error_msg{
-    display: block;
-  }
-
-footer {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 4px solid #61b0e8;
-  background-color: #fff;
-}
-  .buttons {
-    width: 100%;
+form {
+    width: 70%;
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
+    flex-direction:column;
+}
+.mota_options {
+    display: flex;
+    margin-bottom: 10px;
+
+}
+.mota_option {
+    display: flex;
     align-items: center;
-    margin-top: 10px;
-  }
-  .buttons a {
-    color: black;
-    border: 2px solid #04d3fe;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: 16px;
-    transition: all 0.2s ease-in-out;
+    justify-content: center;
+    min-width: 50px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.mota_option:hover {
+    background-color: #f6f2f2;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input {
+    margin-bottom: 15px;
+}
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    height: 150px;
+}
+
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 20px;
+}
+button {
+    min-width:136px;
+    height:45px;
+    padding: 15px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color:#3dc6f6;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.1s;
+    align-self: flex-end;
+}
+button:hover {
+    background-color: #84d1ed;
+}
+footer {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 4px solid #61b0e8;
+    background-color: #fff;
   }
-  .buttons a:hover {
-    color: white;
-    background-color: #04d3fe;
-  }
-         
