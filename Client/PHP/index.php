@@ -35,7 +35,7 @@ include_once 'function.php';
             <?php
             // đã login
             if (isset($_SESSION['MaKhachHang'])) {
-                if (isset($_SESSION['Avatar'])) 
+                if (isset($_SESSION['Avatar']) && $_SESSION['Avatar']!="") 
                     $avatar_path = "../images/avatar_khachhang/{$_SESSION['Avatar']}";
                 else
                     $avatar_path = "../images/avatar_khachhang/0.jpg";

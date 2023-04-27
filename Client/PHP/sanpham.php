@@ -28,25 +28,25 @@ if (isset($_GET['id'])) {
     <div class="product_right">
         <h1 class="product_right_title">
             <?php
-                echo $sp["TenSP"];
+            echo $sp["TenSP"];
             ?>
         </h1>
         <div class="product_right_stats">
             <p class="product_right_rating">
                 <?php
-                    echo "Đánh giá: 150";
+                echo "Đánh giá: 150";
                 ?>
             </p>
             <p class="product_right_sold">
                 <?php
-                    echo "Đã bán: {$sp['SoLuongDaBan']}";
+                echo "Đã bán: {$sp['SoLuongDaBan']}";
                 ?>
             </p>
         </div>
         <div class="product_right_price">
             <p>
                 <?php
-                    echo number_format($sp['DonGia']) . "đ";
+                echo number_format($sp['DonGia']) . "đ";
                 ?>
             </p>
         </div>
@@ -64,22 +64,36 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 <div class="description-container">
-    <label>Mô tả sản phẩm:</label>
-    <p class="description">
-        <?php
-            echo $sp['mota'];
-        ?>
+    <?php
+    echo $sp['mota'];
+    ?>
 </div>
 
 <div class="comments">
-    <label for="comment">Nhận xét của bạn:</label>
-    <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+    <div class="review-box">
+        <h3>Đánh giá của bạn</h3>
+        <form action="">
+            <div class="star-rating">
+                <input type="radio" name="rating" id="star-1" value="1" />
+                <label class="start" for="star-1"></label>
+                <input type="radio" name="rating" id="star-2" value="2" />
+                <label class="start" for="star-2"></label>
+                <input type="radio" name="rating" id="star-3" value="3" />
+                <label class="start" for="star-3"></label>
+                <input type="radio" name="rating" id="star-4" value="4" />
+                <label class="start" for="star-4"></label>
+                <input type="radio" name="rating" id="star-5" value="5" />
+                <label class="start" for="star-5"></label>
+            </div>
+            <textarea placeholder="Nhập đánh giá của bạn vào đây"></textarea>
+            <button type="submit">Gửi đánh giá</button>
+        </form>
+    </div>
 
-    <input type="submit" value="Gửi" />
     <div class="comment">
         <div class="comment_info">
             <img src="https://cf.shopee.vn/file/sg-11134004-23030-r2qczd17ggov16_tn" alt="Avatar" class="comment_avatar" />
-            <p class="comment_name">Nguyễn Văn A:</p>
+            <p class="comment_name">Nguyễn Văn A :</p>
         </div>
 
         <p class="comment_content">Sản phẩm rất tốt, tôi rất hài lòng.</p>
@@ -99,92 +113,15 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 <div class="suggest">
-    <div class="suggest_title">
-        <p class="suggest_title_p">Sản phẩm tương tự</p>
-    </div>
-    <div class="suggest_container">
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
+        <div class="suggest_title">
+            <p class="suggest_title_p">Gợi ý hôm nay</p>
         </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
+        <div class="suggest_container">
+
         </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
-        </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
-        </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
-        </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
-        </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
-        </div>
-        <div class="suggest_item">
-            <img src="https://down-vn.img.susercontent.com/file/sg-11134201-22100-ummk8gf6yeivd0" class="suggest_item_img" />
-            <p class="suggest_item_p">
-                Set 3 Túi Dung My Phâm Trong Suôt, Túi Du Lich Trong Suôt.
-            </p>
-            <div class="suggest_item_text">
-                <p class="suggest_item_price">100.000đ</p>
-                <p class="suggest_item_amount">đã bán 25</p>
-            </div>
+        <div class="suggest_item_footer">
+            <p>Xem thêm</p>
         </div>
     </div>
-    <div class="suggest_item_footer">
-        <p>Xem thêm</p>
-    </div>
-</div>
+<script src="../js/sanpham.js"></script>
+<script src="../JS/index_loadmore.js"></script>

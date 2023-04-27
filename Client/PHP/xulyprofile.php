@@ -2,36 +2,34 @@
 session_start();
 include_once 'connect.php';
 // xử lý avatar
-if (isset($_FILES['avatar'])) {
-	$type = $_FILES['avatar']['type'];
-	if ($type == 'image/jpeg' || $type == 'image/jpg' || $type == 'image/png') {
-		$file_name = $_FILES['avatar']['name'];
-		$tmp_path = $_FILES['avatar']['tmp_name'];
-		// khách hàng đã có avatar trước kia rồi, => đổi avatar
-		if (file_exists("../images/avatar_khachhang/{$_SESSION['Avatar']}")) {
-			// xóa avatar cũ
-			unlink("../images/avatar_khachhang/{$_SESSION['Avatar']}");
-		}
-		// sau đó upload lại avatar mới
-		preg_match('/(\.[jpg|jpeg|png]{3,4})$/i', $file_name, $matches);
-		$phan_mo_rong = strtolower($matches[1]);
-		move_uploaded_file($tmp_path, "../images/avatar_khachhang/{$_SESSION['MaKhachHang']}$phan_mo_rong");
-		// đăng ký session
-		$_SESSION['Avatar'] = $_SESSION['MaKhachHang'].$phan_mo_rong;
-
-	} else {
-		// xử lý không phải định dạng hình ảnh
+if ($_FILES['avatar']['tmp_name'] != "") {
+	$target_file = "../images/avatar_khachhang/{$_SESSION['MaKhachHang']}";
+	$fileType = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+	// kiểm tra nếu đã tồn tại thì xóa file cũ
+	if (file_exists("$target_file.$fileType")) {
+		unlink($target_file . ".jpg");
 	}
+	// kiểm tra định dạng file
+	if ($fileType != 'jpeg' && $fileType != 'jpg' && $fileType != 'png') {
+		echo "<h3 style='color:red;'>Lưu thất bại: Chỉ được lưu ảnh dạng .png, .jpg, .jpeg</h3>";
+		exit();
+	}
+
+	move_uploaded_file($_FILES['avatar']['tmp_name'], "$target_file.$fileType");
+	// đăng ký session
+	$_SESSION['Avatar'] = $_SESSION['MaKhachHang'] . "." . $fileType;
+	$sql = "update `khachhang` SET `Avatar`='{$_SESSION['Avatar']}' WHERE `MaKhachHang` = {$_SESSION['MaKhachHang']}";
+	$list = $connect->query($sql);
+
 }
+
 // xử lý info
 $fullname = $_POST['txtFullName'];
 $gioitinh = $_POST['gender'];
 $dienthoai = $_POST['txtDienThoai'];
 $diachi = $_POST['txtDiaChi'];
 
-
-
-$sql = "UPDATE `khachhang` SET `TenHienThi`='$fullname',`GioiTinh`='$gioitinh',`DienThoai`='$dienthoai',`DiaChi`='$diachi',`Avatar`='{$_SESSION['Avatar']}' WHERE `MaKhachHang` = {$_SESSION['MaKhachHang']}";
+$sql = "UPDATE `khachhang` SET `TenHienThi`='$fullname',`GioiTinh`='$gioitinh',`DienThoai`='$dienthoai',`DiaChi`='$diachi' WHERE `MaKhachHang` = {$_SESSION['MaKhachHang']}";
 $result = $connect->query($sql);
 
 // đăng ký lại session
@@ -41,4 +39,3 @@ $_SESSION['DienThoai'] = $dienthoai;
 $_SESSION['DiaChi'] = $diachi;
 
 Header("Location: index.php?do=profile");
-?>
