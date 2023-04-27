@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Đăng nhập</title>
+		<link rel="stylesheet" type="text/css" href="../CSS/themsanpham.css" />
+		<script
+			src="https://kit.fontawesome.com/e5296c717e.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header_container">
+				<a href="/">
+					<img src="../images/logo2.png" class="header_logo" />
+				</a>
+
+				<div class="header_user">
+					<img
+						src="https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360"
+					/>
+					<p>tran quyen sinh</p>
+					<div class="header_user_menu_option">
+						<div class="header_user_menu_option_1">
+							<a href="profile.html">Profile</a>
+						</div>
+						<div class="header_user_menu_option_1">
+							<a href="dangxuat.html">Đăng xuất</a>
+						</div>
+					</div>
+				</div>
+				<div class="header_user none">
+					<img
+						src="https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg"
+					/>
+
+					<div class="header_user_menu_option">
+						<div class="header_user_menu_option_1">
+							<a href="dangnhap.html">Đăng nhập</a>
+						</div>
+						<div class="header_user_menu_option_1">
+							<a href="dangky.html">Đăng ký</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1>Sửa sản phẩm</h1>
+
+		<form action="#" method="post" enctype="multipart/form-data">
+			<label for="masanpham">Mã sản phẩm:</label>
+			<input type="text" id="masanpham" name="masanpham" />
+
+			<label for="tensanpham">Tên sản phẩm:</label>
+			<input type="text" id="tensanpham" name="tensanpham" />
+
+			<label for="dongia">Đơn giá:</label>
+			<input type="number" id="dongia" name="dongia" min="0" step="10000" />
+
+			<label for="mota">Mô tả:</label>
+			<div>
+				<div class="mota_options">
+					<div class="mota_option">Tiêu đề</div>
+
+					<div class="mota_option">Văn bản</div>
+					<div class="mota_option">hình ảnh</div>
+				</div>
+
+				<textarea id="noidung" name="noidung"></textarea>
+
+				<label for="hinhanh">Hình ảnh:</label>
+				<input
+					type="file"
+					id="hinhanh"
+					name="hinhanh"
+					onchange="previewImage(event)"
+				/>
+			</div>
+
+			<label for="soluongtonkho">Số lượng tồn kho:</label>
+			<input type="text" id="soluongtonkho" name="soluongtonkho" />
+
+			<label for="soluongdaban">Số lượng đã bán:</label>
+			<input type="text" id="soluongdaban" name="soluongdaban" />
+
+			<label for="maloaisanpham">Mã loại sản phẩm:</label>
+			<select id="maloaisanpham" name="maloaisanpham">
+				<option value="">Chọn mã loại sản phẩm</option>
+				<option value="1">Loại 1</option>
+				<option value="2">Loại 2</option>
+				<option value="3">Loại 3</option>
+			</select>
+
+			<button type="submit">Lưu</button>
+		</form>
+
+		<div class="image-preview"></div>
+		<footer>
+			<p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
+		</footer>
+	</body>
+</html>

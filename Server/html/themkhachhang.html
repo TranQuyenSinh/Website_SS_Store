@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="../CSS/index.css" />
-		<link rel="stylesheet" type="text/css" href="../css/dangky.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/themsanpham.css" />
 		<script
 			src="https://kit.fontawesome.com/e5296c717e.js"
 			crossorigin="anonymous"
@@ -45,17 +44,44 @@
 				</div>
 			</div>
 		</div>
-		<form>
-			<h2>Đăng nhập</h2>
-			<label for="username">Tên đăng nhập:</label>
-			<input type="text" id="username" name="txtUsername" />
-			<label for="password">Mật khẩu:</label>
-			<input type="password" id="password" name="txtPassword" />
-			<div class="buttons">
-				<input type="submit" value="Đăng nhập" name="btnSubmit" />
-				<a href="dangky.html">Đăng ký</a>
-			</div>
+		<h1>Thêm khách hàng</h1>
+
+		<form action="#" method="post" enctype="multipart/form-data">
+			<label for="masanpham">Mã khách hàng:</label>
+			<input type="text" id="makhachhang" name="makhachhang" />
+
+			<label for="tensanpham">Tên hiển thị:</label>
+			<input type="text" id="tenhienthi" name="tenhienthi" />
+
+			<label for="dongia">Tên đăng nhập:</label>
+			<input type="number" id="tendangnhap" name="tendangnhap" />
+
+			<label for="mota">Mật khẩu:</label>
+			<input type="number" id="tendangnhap" name="tendangnhap" />
+			<label> Avatar:</label>
+			<input
+				type="file"
+				id="hinhanh"
+				name="hinhanh"
+				onchange="previewImage(event)"
+			/>
+
+			<select id="gioitinh" name="gioitinh">
+				<option value="">Chọn Giới tính</option>
+				<option value="1">Nam</option>
+				<option value="2">Nữ</option>
+			</select>
+
+			<label for="soluongtonkho">Số điện thoại:</label>
+			<input type="text" id="sdt" name="sdt" />
+
+			<label for="soluongdaban">Địa chỉ:</label>
+			<input type="text" id="diachi" name="diachi" />
+
+			<button type="submit">Thêm khách hàng</button>
 		</form>
+
+		<div class="image-preview"></div>
 		<footer>
 			<p>Bản quyền © 2023 Shop Online. Đã đăng ký bản quyền.</p>
 		</footer>
