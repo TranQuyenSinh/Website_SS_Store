@@ -58,3 +58,12 @@ Array.from(dots).forEach((dot, i) => {
 });
 
 setInterval(nextSlide, 5000);
+
+// scroll bar ngang best seller
+const scrollableContainer = document.querySelector('.top_container');
+scrollableContainer.addEventListener('wheel', (event) => {
+  if (event.deltaY !== 0) {
+    event.preventDefault();
+    scrollableContainer.scrollLeft += event.deltaY;
+  }
+});

@@ -75,7 +75,7 @@
 				<span class="error_msg"></span>
 			</div>
 			<div class="buttons">
-				<button type="submit" value="Lưu" name="btnSubmit">Lưu</button>
+				<button type="submit" value="Lưu" name="btnSubmit" class="custom-button submit-button">Lưu</button>
 			</div>
 
 		</div>

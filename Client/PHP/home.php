@@ -1,3 +1,6 @@
+<?php
+$_SESSION['currentPage'] = "index.php?do=home";
+?>
 <div class="content">
     <div class="banner-container">
         <div class="banner-slides">
@@ -103,10 +106,8 @@
         <div class="suggest_container">
 
         </div>
-        <div class="suggest_item_footer">
-            <p>Xem thêm</p>
-        </div>
+        <button class="custom-button loadmore-button sanpham_loadmore">Xem thêm</button>
     </div>
 </div>
 <script src="../js/index.js"></script>
-<script src="../JS/index_loadmore.js"></script>
+<script src="../JS/sanpham_loadmore.js"></script>

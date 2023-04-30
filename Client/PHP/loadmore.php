@@ -1,12 +1,7 @@
 <?php
   include_once 'connect.php';
   
-  // số lượng sp mỗi lần lấy
-  $limit = 10;
-
-  $start = $_POST['start'];
-
-  $sql = "select * from SanPham LIMIT $start , $limit";
+  $sql = $_POST['sql'];
   $list_more = $connect->query($sql);
   $data = array();
 

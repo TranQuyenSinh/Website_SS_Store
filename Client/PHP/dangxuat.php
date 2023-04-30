@@ -9,4 +9,4 @@
     unset($_SESSION['MaKhachHang']);
     unset($_SESSION['TenHienThi']);	
     
-    Header("Location: index.php");
+    Header("Location: ".$_SESSION['currentPage']);

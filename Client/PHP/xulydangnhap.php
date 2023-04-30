@@ -20,7 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['DienThoai'] = $row['DienThoai'];
             $_SESSION['DiaChi'] = $row['DiaChi'];
             $_SESSION['Avatar'] = $row['Avatar'];
-            Header("Location: index.php");
+            Header("Location: ".$_SESSION['currentPage']);
         } 
     else {
         echo("Tên đăng nhập hoặc mật khẩu không chính xác!");
