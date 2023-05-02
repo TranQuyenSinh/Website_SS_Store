@@ -112,9 +112,10 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
     <div class="suggest_container">
 
     </div>
-    <button loaiSP="<?php echo $sp['MaLoaiSP']; ?>" class=" loadmore-button sanpham_loadmore">
+    <button class=" loadmore-button sanpham_loadmore">
         Xem thêm
     </button>
+    <input type="hidden" class="dieukiensql_loadmore" value="where MaLoaiSP = <?php echo $sp['MaLoaiSP']; ?>">
 
 </div>
 <script src="../js/sanpham.js"></script>

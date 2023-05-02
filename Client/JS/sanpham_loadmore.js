@@ -3,12 +3,12 @@
   var limit = 10;
   var btnLoadMore = document.querySelector(".sanpham_loadmore");
   var loadMoreContainer = document.querySelector(".suggest_container");
-  var loaiSP = btnLoadMore.getAttribute("loaiSP");
+  var dieukien = document.querySelector(".dieukiensql_loadmore");
   var sql;
 
   btnLoadMore.addEventListener("click", function () {
-    if (loaiSP != null) {
-      sql = `select * from SanPham where MaLoaiSP = ${loaiSP} LIMIT ${start} , ${limit}`;
+    if (dieukien != null) {
+      sql = `select * from SanPham ${dieukien.value} LIMIT ${start} , ${limit}`;
     } else {
       sql = `select * from SanPham LIMIT ${start} , ${limit}`;
     }
@@ -42,7 +42,7 @@
               newItem.classList.add("show");
             }, 1);
           }
-          start += 10;
+          start += limit;
         } else {
           // nếu hết sản phẩm để load thì ẩn nút load more
           btnLoadMore.style.display = "none";

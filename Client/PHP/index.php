@@ -16,6 +16,7 @@ include_once 'function.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e5296c717e.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="../js/function.js"></script>
     <script src="../js/index.js"></script>
 </head>
 
@@ -28,7 +29,7 @@ include_once 'function.php';
             <div class="header_search">
                 <input type="text" placeholder="Search..." class="header_search_bar" />
                 <div class="header_search_icons">
-                    <a href="/">
+                    <a href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>
