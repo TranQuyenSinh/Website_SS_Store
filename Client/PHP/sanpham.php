@@ -20,6 +20,7 @@ if (isset($_GET['id'])) {
 $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
 ?>
 <link rel="stylesheet" type="text/css" href="../css/sanpham.css" />
+<input type="hidden" value="<?php echo $sp['MaSP']; ?>" class="product_id">
 <div class="product">
     <div class="product_left">
         <?php
@@ -54,26 +55,26 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
         <label>Số lượng:</label>
         <div class="product_right_add-to-cart">
             <div class="add-to-cart_cal">
-                <button class="add-to-cart_minus change-quantity-button">-</button>
+                <button class="add-to-cart_quantity">-</button>
                 <input type="text" value="1" class="add-to-cart_text" />
-                <button class="add-to-cart_plus change-quantity-button">+</button>
+                <button class="add-to-cart_quantity">+</button>
             </div>
-
-            <button class="add-to-cart_buy custom-button primary-button">Mua ngay</button>
-            <button class="add-to-cart_add custom-button secondary-button">Thêm vào giỏ hàng</button>
+            <button class="add-to-cart_buy primary-button">Mua ngay</button>
+            <button class="add-to-cart_add secondary-button">Thêm vào giỏ hàng</button>
         </div>
     </div>
 </div>
 <div class="description-container">
     <?php
+    echo "<h2 class='description_title'>Đánh giá chi tiết {$sp['TenSP']}</h2>";
     echo $sp['mota'];
     ?>
 </div>
 
 <div class="comments">
     <?php
-        if (isset($_SESSION['MaKhachHang'])) {
-            echo "
+    if (isset($_SESSION['MaKhachHang'])) {
+        echo "
             <div class='review-box'>
                 <h3>Đánh giá của bạn</h3>
                 <form action='xulybinhluan.php' method='POST'>
@@ -91,18 +92,18 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
                     </div>
                     <input type='text' value='{$sp['MaSP']}' name='MaSP' hidden>
                     <textarea name='BinhLuan' placeholder='Nhập đánh giá của bạn vào đây'></textarea>
-                    <button type='submit' class='custom-button submit-button'>Gửi đánh giá</button>
+                    <button type='submit' class=' submit-button'>Gửi đánh giá</button>
                 </form>
             </div>
             ";
-        }else {
-            echo "<h3>Hãy đăng nhập để cho chúng tôi biết ý kiến của bạn.</h3><br>";
-            echo "<a href='index.php?do=dangnhap'><button class='custom-button submit-button'>Đăng nhập</button></a>";
-        }
+    } else {
+        echo "<h3>Hãy đăng nhập để cho chúng tôi biết ý kiến của bạn.</h3><br>";
+        echo "<a href='index.php?do=dangnhap'><button class=' submit-button'>Đăng nhập</button></a>";
+    }
     ?>
-    
+
     <div class="comments-container"></div>
-    <button MaSP="<?php echo $sp["MaSP"];  ?>" class="custom-button loadmore-button binhluan_loadmore">Xem thêm bình luận</button>
+    <button MaSP="<?php echo $sp["MaSP"];  ?>" class=" loadmore-button binhluan_loadmore">Xem thêm bình luận</button>
 </div>
 <div class="suggest">
     <div class="suggest_title">
@@ -111,9 +112,9 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
     <div class="suggest_container">
 
     </div>
-    <button loaiSP="<?php echo $sp['MaLoaiSP']; ?>" class="custom-button loadmore-button sanpham_loadmore">
+    <button loaiSP="<?php echo $sp['MaLoaiSP']; ?>" class=" loadmore-button sanpham_loadmore">
         Xem thêm
-    </button>    
+    </button>
 
 </div>
 <script src="../js/sanpham.js"></script>

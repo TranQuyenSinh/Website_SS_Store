@@ -15,22 +15,14 @@ $_SESSION['currentPage'] = "index.php?do=home";
                 // nếu không phải file(folder) thì bỏ qua
                 if (!is_file($dir . '/' . $file))
                     continue;
-                if ($first == True) {
-                    echo "
+                $active = $first == True? "active":"";
+                echo "
                                     <img
                                         src='../images/banner/$file'
-                                        class='slide active'
+                                        class='slide $active'
                                     />
                                 ";
-                    $first = False;
-                } else {
-                    echo "
-                                    <img
-                                        src='../images/banner/$file'
-                                        class='slide'
-                                    />
-                                ";
-                }
+                $first = False;
                 $banner_count++;
             }
             ?>
@@ -106,8 +98,8 @@ $_SESSION['currentPage'] = "index.php?do=home";
         <div class="suggest_container">
 
         </div>
-        <button class="custom-button loadmore-button sanpham_loadmore">Xem thêm</button>
+        <button class="loadmore-button sanpham_loadmore">Xem thêm</button>
     </div>
 </div>
-<script src="../js/index.js"></script>
+<script src="../js/home.js"></script>
 <script src="../JS/sanpham_loadmore.js"></script>

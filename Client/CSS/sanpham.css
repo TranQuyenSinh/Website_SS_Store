@@ -53,15 +53,18 @@
   height: 32px;
   margin-bottom: 20px;
 }
-.add-to-cart_minus {
+.add-to-cart_quantity {
   min-width: 32px;
+  color: black;
+  font-size: 20px;
+  padding: 0 10px;
+  box-shadow: none;
+  border: 1px solid #000;
+  margin: 0 2px;
 }
 .add-to-cart_text {
   width: 40px;
   text-align: center;
-}
-.add-to-cart_plus {
-  min-width: 32px;
 }
 .add-to-cart_buy {
   margin-right: 50px;

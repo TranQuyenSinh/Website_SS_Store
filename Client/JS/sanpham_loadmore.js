@@ -21,10 +21,7 @@
         if (data.length > 0) {
           for (var i = 0; i < data.length; i++) {
             // format số tiền đúng định dạng ###.###.### đ
-            var formatedDonGia = parseInt(data[i].DonGia).toLocaleString(
-              "vi-VN",
-              { style: "currency", currency: "VND" }
-            );
+            var formatedDonGia = formatMoney(data[i].DonGia);
             var html = `  <a href="index.php?do=sanpham&id=${data[i].MaSP}">
                             <div class="suggest_item">
                                 <img src="../images/sanpham/${data[i].HinhAnh}" class="suggest_item_img" />
