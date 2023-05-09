@@ -147,7 +147,7 @@ a {
 .header_cart_menu {
   width: 400px;
   background: white;
-  box-shadow: -2px 0px 13px 4px #ccc;
+  box-shadow: 2px 2px 4px 1px #ccc;
   z-index: 3;
   position: absolute;
   top: 42px;

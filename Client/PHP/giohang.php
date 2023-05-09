@@ -50,7 +50,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 echo "Tổng tiền: ". number_format($tongtien). ' đ';
             ?>
         </div>
-        <button class="buy-button">Mua hàng</button>
+        <a href="index.php?do=thanhtoan"><button class="buy-button">Mua hàng</button></a>
     </div>
 <?php
 } else {
