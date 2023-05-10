@@ -3,7 +3,7 @@ session_start();
 include_once 'connect.php';
 // xử lý avatar
 if ($_FILES['avatar']['tmp_name'] != "") {
-	$target_file = "../images/avatar_khachhang/{$_SESSION['MaKhachHang']}";
+	$target_file = "../../images/avatar_khachhang/{$_SESSION['MaKhachHang']}";
 	$fileType = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
 	// kiểm tra nếu đã tồn tại thì xóa file cũ
 	if (file_exists("$target_file.$fileType")) {

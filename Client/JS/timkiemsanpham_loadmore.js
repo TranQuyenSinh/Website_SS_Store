@@ -27,7 +27,7 @@
               );
               var html = `  <a href="index.php?do=sanpham&id=${data[i].MaSP}">
                               <div class="suggest_item">
-                                  <img src="../images/sanpham/${data[i].HinhAnh}" class="suggest_item_img" />
+                                  <img src="../../images/sanpham/${data[i].HinhAnh}" class="suggest_item_img" />
                                   <p class="suggest_item_p">${data[i].TenSP}</p>
                                   <div class="suggest_item_text">
                                       <p class="suggest_item_price">${formatedDonGia}</p>

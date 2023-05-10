@@ -26,7 +26,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 $tongtien+=$thanhtien;
                 echo "
                     <tr>
-                    <td><img src='../images/sanpham/{$sanpham['HinhAnh']}' alt='{$sanpham['TenSP']}' class='productImage'></td>
+                    <td><img src='../../images/sanpham/{$sanpham['HinhAnh']}' alt='{$sanpham['TenSP']}' class='productImage'></td>
                     <td>{$sanpham['TenSP']}</td>
                     <td>
                         <div class='add-to-cart_cal'>

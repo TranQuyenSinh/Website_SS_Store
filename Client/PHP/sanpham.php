@@ -24,7 +24,7 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
 <div class="product">
     <div class="product_left">
         <?php
-        echo "<img src='../images/sanpham/{$sp['HinhAnh']}' class='product_left_img' alt='error' />";
+        echo "<img src='../../images/sanpham/{$sp['HinhAnh']}' class='product_left_img' alt='error' />";
         ?>
     </div>
     <div class="product_right">
@@ -66,7 +66,6 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
 </div>
 <div class="description-container">
     <?php
-    echo "<h2 class='description_title'>Đánh giá chi tiết {$sp['TenSP']}</h2>";
     echo $sp['mota'];
     ?>
 </div>
@@ -121,3 +120,5 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
 <script src="../js/sanpham.js"></script>
 <script src="../JS/sanpham_loadmore.js"></script>
 <script src="../JS/binhluan_loadmore.js"></script>
+
+

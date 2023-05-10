@@ -51,7 +51,7 @@
 
 			echo "
 				<div class='cart_item'>
-					<img src='../images/sanpham/{$sanpham['HinhAnh']}' alt='{$sanpham['TenSP']}'>
+					<img src='../../images/sanpham/{$sanpham['HinhAnh']}' alt='{$sanpham['TenSP']}'>
 					<div class='item_info'>
 						<div class='item_name'>{$sanpham['TenSP']}</div>
 						<div class='item_amount'>Số lưọng: $soluong</div>

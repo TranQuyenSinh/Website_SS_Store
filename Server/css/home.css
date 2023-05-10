@@ -1,0 +1,35 @@
+/* card */
+
+.card_container {
+  display: flex;
+}
+.card {
+  display: block;
+  height: 100px;
+  width: 300px;
+  padding: 0 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px #ccc;
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #252422;
+  transition: 0.2s;
+}
+.card:hover {
+  scale: 1.02;
+}
+.card i {
+  font-size: 34px;
+}
+.card_info {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.card_info span:last-child {
+  font-size: 28px;
+}

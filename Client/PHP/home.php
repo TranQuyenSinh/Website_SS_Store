@@ -5,7 +5,7 @@ $_SESSION['currentPage'] = "index.php?do=home";
     <div class="banner-container">
         <div class="banner-slides">
             <?php
-            $dir = '../images/banner';
+            $dir = '../../images/banner';
             $first = True;
             $banner_count = 0;
             // Lấy danh sách tất cả các tập tin và thư mục trong thư mục
@@ -18,7 +18,7 @@ $_SESSION['currentPage'] = "index.php?do=home";
                 $active = $first == True? "active":"";
                 echo "
                                     <img
-                                        src='../images/banner/$file'
+                                        src='../../images/banner/$file'
                                         class='slide $active'
                                     />
                                 ";
@@ -50,7 +50,7 @@ $_SESSION['currentPage'] = "index.php?do=home";
                 echo "
                     <div class='category_item'>
                     <img
-                        src='../images/loaisp/{$row['HinhAnh']}'
+                        src='../../images/loaisp/{$row['HinhAnh']}'
                         class='category_img'
                     />
                     <p class='category_p'>" . $row['TenLoaiSP'] . "</p>
@@ -76,7 +76,7 @@ $_SESSION['currentPage'] = "index.php?do=home";
                                     <div class='top_item'>
                                         <div class='top_item_img'>
                                             <img
-                                            src='../images/sanpham/{$row['HinhAnh']}'
+                                            src='../../images/sanpham/{$row['HinhAnh']}'
                                             />
                                         </div>
                                         <p class='top_item_p'>{$row['TenSP']}</p>

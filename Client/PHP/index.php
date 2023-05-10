@@ -2,7 +2,6 @@
 session_start();
 ob_start();
 include_once 'connect.php';
-include_once 'function.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +23,7 @@ include_once 'function.php';
     <div class="header">
         <div class="header_container">
             <a href="index.php">
-                <img src="../images/logo2.png" class="header_logo" />
+                <img src="../../images/logo2.png" class="header_logo" />
             </a>
             <div class="header_search">
                 <input type="text" placeholder="Search..." class="header_search_bar" />
@@ -59,7 +58,7 @@ include_once 'function.php';
                             echo "
                             <a href='index.php?do=sanpham&id=$id'>
                                 <div class='header_cart_item'>
-                                    <img src='../images/sanpham/{$sanpham['HinhAnh']}' alt='{$sanpham['TenSP']}'>
+                                    <img src='../../images/sanpham/{$sanpham['HinhAnh']}' alt='{$sanpham['TenSP']}'>
                                     <div class='cart_info'>
                                         <div class='product_name'>{$sanpham['TenSP']}</div>
                                         <div class='product_price'>".number_format($sanpham['DonGia'])." đ</div>
@@ -86,33 +85,6 @@ include_once 'function.php';
                         ";
                     }
                     ?>
-
-                    
-                    <!-- 
-                   
-                    <a href="#">
-                        <div class="header_cart_item">
-                            <img src="https://th.bing.com/th/id/R.e1dec49abfdde1f267104eb32bba63ff?rik=Pu8viMczhQwDPg&pid=ImgRaw&r=0" alt="">
-                            <div class="cart_info">
-                                <div class="product_name">Laptop</div>
-                                <div class="product_price">120.000đ</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="header_cart_item">
-                            <img src="https://th.bing.com/th/id/R.e1dec49abfdde1f267104eb32bba63ff?rik=Pu8viMczhQwDPg&pid=ImgRaw&r=0" alt="">
-                            <div class="cart_info">
-                                <div class="product_name">Laptop</div>
-                                <div class="product_price">120.000đ</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="header_cart_item">
-                            Bấm xem giỏ hàng
-                        </div>
-                    </a> -->
                 </div>
 
             </div>
@@ -120,9 +92,9 @@ include_once 'function.php';
             // đã login
             if (isset($_SESSION['MaKhachHang'])) {
                 if (isset($_SESSION['Avatar']) && $_SESSION['Avatar'] != "")
-                    $avatar_path = "../images/avatar_khachhang/{$_SESSION['Avatar']}";
+                    $avatar_path = "../../images/avatar_khachhang/{$_SESSION['Avatar']}";
                 else
-                    $avatar_path = "../images/avatar_khachhang/0.jpg";
+                    $avatar_path = "../../images/avatar_khachhang/0.jpg";
                 echo "
                         <div class='header_user'>
                             <img src='$avatar_path' />
@@ -144,7 +116,7 @@ include_once 'function.php';
             } else {
                 echo "
                     <div class='header_user'>
-                        <img src='https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg' />
+                        <img src='../../images/avatar_khachhang/0.jpg' />
         
                         <div class='header_user_menu_option'>
                             <a href='index.php?do=dangnhap'>

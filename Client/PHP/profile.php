@@ -4,9 +4,9 @@
 		<div class="avatar">
 			<?php
 			if (isset($_SESSION['Avatar']) && $_SESSION['Avatar']!= "") {
-				$img_src = "../images/avatar_khachhang/{$_SESSION['Avatar']}";
+				$img_src = "../../images/avatar_khachhang/{$_SESSION['Avatar']}";
 			} else {
-				$img_src = "../images/avatar_khachhang/0.jpg";
+				$img_src = "../../images/avatar_khachhang/0.jpg";
 			}
 			echo "<img src='{$img_src}' alt='avatar'/>";
 			?>
@@ -92,22 +92,8 @@ if (!isset($_SESSION['MaKhachHang'])) {
 ?>
 
 <script>
-	function ShowPreviewImage(file_input) {
-
-		// Lấy file được chọn
-		const selectedFile = file_input.files[0];
-		//Tạo một đối tượng FileReader
-		const reader = new FileReader();
-		reader.onload = function(event) {
-			// Cập nhật thuộc tính src của phần tử avatar
-			document.querySelector('.avatar img').src = event.target.result;
-		};
-		// Đọc nội dung của file được chọn
-		reader.readAsDataURL(selectedFile);
-
-	}
-
 	document.querySelector("input[type='file']").onchange = function() {
-		ShowPreviewImage(this);
+		var img_out = document.querySelector('.avatar img');
+		ShowPreviewImage(this, img_out);
 	}
 </script>
