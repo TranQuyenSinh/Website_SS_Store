@@ -10,9 +10,11 @@ $mota = $_POST['noidung'];
 $hinhanh = $_FILES['hinhanh'];
 $tonkho = $_POST['soluongtonkho'];
 
+
 $time = date('Y_m_d_H_i_s');
 
 $hinhanh_name = uploadImage($hinhanh, $time, $image_path);
-$sql_themsp = "INSERT INTO `sanpham`( `TenSP`, `DonGia`, `mota`, `TonKho`, `SoLuongDaBan`, `HinhAnh`, `MaLoaiSP`) VALUES ('$tensp',$dongia,'$mota',$tonkho,0,'$hinhanh_name',$maloaisp)";
+$sql_themsp = "INSERT INTO `sanpham`( `TenSP`, `DonGia`, `mota`, `TonKho`, `SoLuongDaBan`, `HinhAnh`, `MaLoaiSP`) 
+                            VALUES ('$tensp',$dongia,'$mota',$tonkho,0,'$hinhanh_name',$maloaisp)";
 
 $list = $connect->query($sql_themsp);

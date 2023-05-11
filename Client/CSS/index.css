@@ -977,6 +977,7 @@ a {
 .suggest_item_img {
   width: 100%;
   object-fit: cover;
+  height: 250px;
 }
 .suggest_item_p {
   font-size: 15px;

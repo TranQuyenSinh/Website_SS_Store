@@ -28,6 +28,9 @@
     font-size: 15px;
     border-right: 1px solid #f5f5f5;
     margin-right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 .product_right_sold {
     font-size: 15px;
@@ -85,7 +88,7 @@ label {
     width: 100%;
     padding: 20px;
     background-color: #fff;
-    text-align: center;
+    text-align: left;
 }
 .description-container h1,
 .description-container h2,
@@ -101,9 +104,9 @@ label {
     font-size: 18px;
 }
 .description-container p:has(img) {
-    margin: 12px auto;
+    margin: 12px 0;
     height: 100%;
-    width: 400px;
+    text-align: center;
 }
 
 .comments {

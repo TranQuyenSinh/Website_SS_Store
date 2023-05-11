@@ -17,7 +17,7 @@
         if (data.length > 0) {
           for (var i = 0; i < data.length; i++) {
             var html = ` <div class='comment'>
-                            <img src='../images/avatar_khachhang/${data[i].Avatar}' alt='Avatar' class='comment_avatar' />
+                            <img src='../../images/avatar_khachhang/${data[i].Avatar}' alt='Avatar' class='comment_avatar' />
                             <div class='comment_info'>
                                 <p class='comment_name'>${data[i].TenHienThi}</p>
                                 <div class='star-rating'>`;

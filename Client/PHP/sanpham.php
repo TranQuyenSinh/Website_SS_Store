@@ -9,6 +9,9 @@ if (isset($_GET['id'])) {
 
     if ($result) {
         $sp = $result->fetch_array(MYSQLI_ASSOC);
+        $sql_danhgia_tb = "SELECT SUM(SoSao)/COUNT(*) as 'DanhGia' FROM `danhgia` WHERE MaSP = {$sp['MaSP']}";
+        $result = $connect->query($sql_danhgia_tb)->fetch_array(MYSQLI_ASSOC)['DanhGia'];
+        $danhgia_tb = number_format($result, 1);
     } else {
         die("<h3>Sản phẩm không tồn tại1</h3>");
         exit();
@@ -36,8 +39,9 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
         <div class="product_right_stats">
             <p class="product_right_rating">
                 <?php
-                echo "Đánh giá: 150";
+                echo "Đánh giá: $danhgia_tb";
                 ?>
+                <i class="fas fa-star" style="color: #ffcc00;"></i>
             </p>
             <p class="product_right_sold">
                 <?php
@@ -59,7 +63,6 @@ $_SESSION['currentPage'] = "index.php?do=sanpham&id=$id";
                 <input type="text" value="1" class="add-to-cart_text" />
                 <button class="add-to-cart_quantity">+</button>
             </div>
-            <button class="add-to-cart_buy primary-button">Mua ngay</button>
             <button class="add-to-cart_add secondary-button">Thêm vào giỏ hàng</button>
         </div>
     </div>

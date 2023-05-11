@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../css/themsanpham.css">
 <i class="fas fa-arrow-left backpage_icon" onclick="loadPage('sanpham.php')"></i>
 <h1>Thêm sản phẩm</h1>
-<form action="xulythemsanpham.php" method="POST" enctype="multipart/form-data">
+<form class="formthemsanpham" action="#" method="" enctype="multipart/form-data">
 
     <label for="maloaisanpham">Mã loại sản phẩm:</label>
     <select id="maloaisanpham" name="maloaisanpham">
@@ -31,7 +31,7 @@
     <img src="" alt="" class="previewImg">
 
     <label for="soluongtonkho">Số lượng tồn kho:</label>
-    <input type="text" id="soluongtonkho" name="soluongtonkho" />
+    <input type="number" id="soluongtonkho" name="soluongtonkho" />
 
     <button type="submit">Thêm sản phẩm</button>
 </form>
@@ -41,9 +41,32 @@
         filebrowserUploadUrl: 'ck_upload.php',
         filebrowserUploadMethod: 'form'
     });
+    // preview image
     $('input[type=file]').change(function(e) {
-        console.log(123);
-        preview_img = document.querySelector('.previewImg');
+        var preview_img = document.querySelector('.previewImg');
         ShowPreviewImage(this, preview_img);
+    });
+    // submit
+    $('.formthemsanpham').submit(function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        var nd = CKEDITOR.instances.noidung.getData()
+        console.log("content: ",nd);
+        formData.set('noidung', nd)
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "xulythemsanpham.php",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                $('.main_content').load("sanpham.php");
+            },
+            error: function(e) {
+                console.log("ERROR : ", e);
+            }
+        });
+
     });
 </script>

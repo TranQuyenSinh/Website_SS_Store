@@ -12,8 +12,9 @@
     $tonkho = $_POST['soluongtonkho'];
     $time = date('Y_m_d_H_i_s');
 
+    echo $mota;
     // chỉnh sửa hình ảnh
-    if (isset($_FILES['hinhanh']['name'])) {
+    if ($_FILES['hinhanh']['name']!= '') {
         // xóa ảnh cũ
         $sp = $connect->query("select HinhAnh from sanpham where MaSP = $masp")->fetch_array(MYSQLI_ASSOC);
         if ($sp['HinhAnh']!=null) {
@@ -24,4 +25,7 @@
         $connect->query("update sanpham set HinhAnh = '$image_name' where MaSP = $masp");
     }
 
+    // chỉnh sửa các info
+    $sql_update = "UPDATE `sanpham` SET `TenSP`='$tensp',`DonGia`=$dongia,`mota`='$mota',`TonKho`=$tonkho, `MaLoaiSP`=$maloaisp WHERE MaSP = $masp";
+    $connect->query($sql_update);
 

@@ -48,13 +48,15 @@ $_SESSION['currentPage'] = "index.php?do=home";
             $list_loaisp = $connect->query($sql);
             while ($row = $list_loaisp->fetch_array(MYSQLI_ASSOC)) {
                 echo "
+                <a href='index.php?do=timkiem&MaLoaiSP={$row['MaLoaiSP']}&TenLoaiSP={$row['TenLoaiSP']}'>
                     <div class='category_item'>
-                    <img
-                        src='../../images/loaisp/{$row['HinhAnh']}'
-                        class='category_img'
-                    />
-                    <p class='category_p'>" . $row['TenLoaiSP'] . "</p>
-                </div>
+                        <img
+                            src='../../images/loaisp/{$row['HinhAnh']}'
+                            class='category_img'
+                        />
+                        <p class='category_p'>" . $row['TenLoaiSP'] . "</p>
+                    </div>
+                </a>
                                 ";
             }
             ?>

@@ -9,22 +9,27 @@ function xoaSP(idsp) {
     }
 }
 function suaSP(idsp) {
-    $('.main_content').load("suasanpham.php", {idsp:idsp});
+    $(".main_content").load("suasanpham.php", { idsp: idsp });
 }
 
 // xóa, sửa xog quay về page sản phẩm
 function loadPage(page) {
-    $('.main_content').load(page);
+    $(".main_content").load(page);
 }
 $(document).ready(function () {
     // tìm kiếm sp
     $(".header_search_icons").click(function (e) {
         e.preventDefault();
         var search_text = $("input.header_search_bar").val();
-        let sql = `SELECT MaSP, TenSP, DonGia,TonKho, SoLuongDaBan, TenLoaiSP 
-                    FROM sanpham sp, loaisanpham lsp 
-                    WHERE sp.MaLoaiSP = lsp.MaLoaiSP and sp.TenSP like '%${search_text}%'`;
-
+        let sql = `SELECT sp.MaSP, sp.TenSP, sp.DonGia, sp.TonKho, sp.SoLuongDaBan, lsp.TenLoaiSP 
+                    FROM sanpham sp 
+                    INNER JOIN loaisanpham lsp ON sp.MaLoaiSP = lsp.MaLoaiSP 
+                    WHERE sp.TenSP LIKE '%${search_text}%' `;
+        if (!isNaN(search_text) && search_text != "") {
+            sql += `OR sp.MaSP = ${search_text}`;
+        }
+        
+        // lấy danh sách sản phẩm tìm được
         $.ajax({
             url: "loaddata.php",
             method: "POST",
@@ -46,7 +51,7 @@ $(document).ready(function () {
                         <td>${data[i].TenLoaiSP}</td>
                         <td>${data[i].MaSP}</td>
                         <td>${data[i].TenSP}</td>
-                        <td>${formatedDonGia} đ</td>
+                        <td>${formatedDonGia}</td>
                         <td>${data[i].TonKho}</td>
                         <td>${data[i].SoLuongDaBan}</td>
                         <td class='action-icons'>
@@ -79,5 +84,4 @@ $(document).ready(function () {
         e.preventDefault();
         $(".main_content").load("themsanpham.php");
     });
-    
 });

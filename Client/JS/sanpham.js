@@ -24,6 +24,3 @@ plusButton.addEventListener("click", function () {
 addToCartBtn.addEventListener("click", function () {
 	window.location.href = 'xulygiohang.php?do=add&id='+maSP+'&soluong='+soluongInput.value;
 });
-buyBtn.addEventListener("click", function () {
-
-});

@@ -1,7 +1,7 @@
 <?php
     include_once 'connect.php';
 
-    $sql_laysanpham = "SELECT `MaSP`, `TenSP`, `DonGia`,`TonKho`, `SoLuongDaBan`, `TenLoaiSP` FROM sanpham sp, loaisanpham lsp WHERE sp.MaLoaiSP = lsp.MaLoaiSP";
+    $sql_laysanpham = "SELECT `MaSP`, `TenSP`, `DonGia`,`TonKho`, `SoLuongDaBan`, sp.HinhAnh, `TenLoaiSP` FROM sanpham sp, loaisanpham lsp WHERE sp.MaLoaiSP = lsp.MaLoaiSP";
     $list_sp = $connect->query($sql_laysanpham);
     if ($list_sp) {
         while ($sp = $list_sp->fetch_array(MYSQLI_ASSOC)) {
@@ -13,6 +13,7 @@
                     <td>".number_format($sp['DonGia'])." đ</td>
                     <td>{$sp['TonKho']}</td>
                     <td>{$sp['SoLuongDaBan']}</td>
+                    <td><img src='../../images/sanpham/{$sp['HinhAnh']}' alt=''></td>
                     <td class='action-icons'>
                         <div class='action-icon-container' onclick='suaSP({$sp['MaSP']})'>
                             <div for='action-icon' class='action-icon update' >

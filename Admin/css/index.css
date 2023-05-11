@@ -149,9 +149,11 @@ body {
   box-shadow: 1px 1px 1px #ccc;
   z-index: 2;
   transition: 0.2s;
+  display: none;
 }
 .option.show {
   opacity: 1;
+  display: block;
   transform: translateY(20px);
 }
 .user_info .option::before {

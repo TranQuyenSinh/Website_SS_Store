@@ -5,6 +5,8 @@
     //        $path: đường dẫn lưu hình ảnh
 
     function uploadImage($file, $newname, $path) {
+        if ($file['name'] == '') 
+            return '';
         $target_file = $path.$newname;
         $fileType = pathinfo($file['name'], PATHINFO_EXTENSION);
         // kiểm tra định dạng file

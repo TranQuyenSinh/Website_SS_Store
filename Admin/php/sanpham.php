@@ -1,7 +1,7 @@
 <?php
     include_once 'connect.php';
 ?>
-<link rel="stylesheet" href="../css/sanpham.css">
+<link rel="stylesheet" href="../css/data_table.css">
 <script src="../js/sanpham.js"></script>
 <div class="container_add">
     <div class="header_search">
@@ -27,7 +27,8 @@
             <th>Đơn giá</th>
             <th>Số lượng tồn kho</th>
             <th>Số lượng đã bán</th>
-            <th></th>
+            <th>Hình ảnh</th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody class="listsanpham">
