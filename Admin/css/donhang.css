@@ -1,0 +1,214 @@
+.header_container {
+    display: flex;
+
+    align-items: center;
+}
+.donhang_container {
+    display: flex;
+}
+.donhang {
+    width: 34%;
+    background: #fff;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 8px;
+    border: 1px solid silver;
+}
+.donhang_item {
+    display: flex;
+    gap: 25px;
+    padding: 12px;
+    background: #00000017;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 0;
+    cursor: pointer;
+    position: relative;
+}
+.donhang_info {flex: 1;}
+.donhang_info .madonhang {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    font-style: italic;
+    color: #161616;
+}
+.donhang_info .info_header {
+}
+.donhang .khachhang_info {
+}
+.donhang_item i {
+    font-size: 30px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+.donhang_item:hover .khachhang_info.tenkhachhang {
+    text-decoration: underline;
+}
+.donhang .khachhang_info {
+    margin-top: 2px;
+}
+.khachhang_info.tenkhachhang {
+    font-weight: bold;
+    font-size: 19px;
+    color: #37474f;
+}
+.donhang_time {
+    color: #353535;
+    font-size: 16px;
+    display: flex;
+    justify-content: end;
+    margin: 12px 0;
+}
+.donhang_overlay {
+    position: absolute;
+
+    width: 100%;
+
+    left: 0;
+
+    bottom: -60px;
+
+    background: #00000047;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    height: 60px;
+
+    transition: 0.2s;
+}
+.donhang_item:hover .donhang_overlay {
+    transform: translateY(-60px);
+}
+.donhang_overlay button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.donhang_overlay button i {font-size: 18px;color: white;margin-right: 12px;}
+.donhang_overlay .trangthaiBtn {
+}
+.donhang_overlay .huydonBtn {
+    background: rgb(230, 78, 78);
+}
+/* Chi tiết đơn hàng */
+.chitiet {
+    background: #fff;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 8px;
+    border: 1px solid silver;
+    width: 62%;
+    height: fit-content;
+    position: sticky;
+    top: 10px;
+    left: 0;
+}
+.chitiet table {
+    width: 100%;
+    text-align: left;
+}
+.chitiet table tbody {
+}
+.chitiet table th {
+    padding: 20px 20px 20px 0px;
+
+    color: #333;
+
+    font-weight: 500;
+
+    font-size: 15px;
+}
+.chitiet table tr {
+}
+.chitiet table td {
+    height: 84px;
+    border-bottom: 1px dashed #ccc;
+}
+.chitiet table img {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+}
+.chitiet table button {
+    min-width: 50px;
+    margin-right: 7px;
+    color: #171717;
+    color: white;
+}
+/* lọc */
+.search-box {
+    display: flex;
+    align-items: center;
+    margin: 16px;
+}
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-box {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: 3px;
+}
+
+.filter-box span {
+    margin-right: 10px;
+}
+
+.filter-box select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 12px;
+}
+
+/* search */
+.header_search {
+    width: 100%;
+    max-width: 700px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #fff;
+    justify-content: space-between;
+    padding-right: 3px;
+    padding-left: 10px;
+    overflow: hidden;
+    flex: 1;
+    margin-left: 50px;
+}
+.header_search_bar {
+    min-width: 80%;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+.header_search_icons {
+    min-width: 60px;
+    height: 90%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00d4ff;
+    cursor: pointer;
+}
+.header_search_icons i {
+    font-size: 15px;
+    color: #fff;
+}

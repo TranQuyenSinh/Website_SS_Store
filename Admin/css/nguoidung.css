@@ -1,0 +1,191 @@
+.main_content {
+    padding: 16px;
+}
+.card_container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+.nguoidung_card {
+    width: 320px;
+    height: 120px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    display: flex;
+    color: #ccc;
+    position: relative;
+    margin: 12px;
+    align-items: center;
+    padding: 12px;
+    background: #ededed;
+    overflow: hidden;
+}
+.card_add {
+    height: 70px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ccc;
+
+    color: #38bb4d;
+
+    position: relative;
+
+    margin: 12px;
+
+    background: #ededed;
+
+    overflow: hidden;
+
+    font-weight: bold;
+
+    font-size: 20px;
+
+    padding: 0 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.card_add:hover {
+    scale: 1.02;
+    opacity: 0.9;
+}
+.nguoidung_card:hover .nguoidung_card_overlay {
+    display: block;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    background: #000000a3;
+
+    z-index: 2;
+}
+.nguoidung_card img {
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+.nguoidung_info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    font-size: 20px;
+
+    height: 100%;
+
+    margin-left: 12px;
+}
+.nguoidung_fullname {
+    font-weight: 700;
+}
+.nguoidung_status {
+}
+.fas {
+}
+.fa-lock {
+}
+.nguoidung_card_overlay {
+    display: none;
+}
+.suaBtn {
+    color: white;
+    opacity: 1;
+    background: rgb(200 155 11);
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+}
+.xoaBtn {
+    color: white;
+    opacity: 1;
+    background: rgb(230, 78, 78);
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+}
+.modal_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background: #00000094;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.modal {
+    width: 35%;
+    background: #fff;
+    border: none;
+    padding: 16px;
+    position: relative;
+    z-index: 10;
+}
+.modal form {
+    padding: 0 12px;
+}
+.modal form input[type='text'] {
+    
+padding: 10px 6px;
+    
+font-size: 14px;
+    
+margin: 6px 0;
+    
+outline: none;
+    
+border-radius: 4px;
+    
+border: 2px solid #17a9d1;
+    
+width: 100%;
+}
+.modal .previewImg {height: 100%;width: 100px;object-fit: cover;margin: 12px 0;}
+.submit-button {float: right;}
+.close {
+    color: #aaaaaa;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+    font-size: 36px;
+    transition: 0.2s;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

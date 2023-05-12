@@ -17,6 +17,19 @@
     </a>
 
     <a href="#" class="card">
+        <i class="fas fa-motorcycle" style="color:#6681af;"></i>
+        <div class="card_info">
+            <span>Số đơn hàng đang giao</span>
+            <span>
+                <?php
+                    $sql_donhang_danggiao = "SELECT count(*) as 'SoLuongDonDangGiao' FROM `donhang` where TrangThai = 1";
+                    echo $connect->query($sql_donhang_danggiao)->fetch_array(MYSQLI_ASSOC)['SoLuongDonDangGiao'];
+                ?>
+            </span>
+        </div>
+    </a>
+
+    <a href="#" class="card">
         <i class="fas fa-wallet" style="color:#7AC29A;"></i>
         <div class="card_info">
             <span>Doanh thu tháng này</span>

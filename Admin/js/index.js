@@ -11,6 +11,8 @@ function ShowPreviewImage(file_input, img_output) {
     // Đọc nội dung của file được chọn
     reader.readAsDataURL(selectedFile);
 }
+
+  
 $(document).ready(function () {
 	// mở menu đăng xuất
     $(".user_info").click(function (e) {

@@ -7,6 +7,7 @@
     $sodienthoai = $_POST['txtDienThoai'];
     $diachi = $_POST['txtDiaChi'] . "/" . $_POST['ls_ward'] . "/" . $_POST['ls_district'] . "/" . $_POST['ls_province'];
     $ghichu = $_POST['txtGhiChu'];
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
     $time = date('Y-m-d H:i:s');
     $cart = $_SESSION['cart'];
 

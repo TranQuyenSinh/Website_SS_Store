@@ -65,7 +65,11 @@ include_once 'connect.php';
                 <h3 class="content_title"></h3>
                 <div class="user_info">
                     <img src="../../images/avatar_khachhang/0.jpg" alt="">
-                    <p>Trần Quyền Sinh</p>
+                    <p>
+                        <?php
+                            echo $_SESSION['TenHienThi'];
+                        ?>
+                    </p>
                     <a href="xulydangxuat.php" class="option">Đăng xuất</a>
                 </div>
             </div>
