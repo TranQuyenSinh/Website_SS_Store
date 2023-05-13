@@ -5,21 +5,32 @@
         <span>Bộ lọc:</span>
         <div class="filter-box">
             <select name="time">
-                <option value="0">Hôm nay</option>
-                <option value="1">Tháng này</option>
-                <option value="2">Tất cả</option>
+                <option value="0">Thời gian</option>
+                <option value="1">Hôm nay</option>
+                <option value="2">Tháng này</option>
             </select>
             <select name="trangthai">
-                <option value="0">Chờ xác nhận</option>
-                <option value="1">Đang giao</option>
-                <option value="2">Đã giao</option>
-                <option value="3">Đã hủy</option>
+                <option value="0">Trạng thái</option>
+                <option value="1" 
+                <?php
+                    if (isset($_GET['do']) && $_GET['do'] == 'donchuaduyet')
+                        echo "selected";
+                ?>>Chờ xác nhận</option>
+                <option value="2" 
+                <?php
+                    if (isset($_GET['do']) && $_GET['do'] == 'dondanggiao')
+                        echo "selected";
+                ?>
+                >Đang giao</option>
+                <option value="3">Đã giao</option>
+                <option value="4">Đã hủy</option>
             </select>
-            <button class="submit-button">Lọc</button>
+
+            <button class="submit-button locBtn">Lọc</button>
         </div>
     </div>
     <div class="header_search">
-        <input type="text" placeholder="Mã đơn hàng..." class="header_search_bar" />
+        <input type="number" placeholder="Mã đơn hàng..." class="header_search_bar" />
         <div class="header_search_icons">
             <a href="#">
                 <i class="fas fa-search"></i>
@@ -42,7 +53,6 @@
                 <th>Đơn giá</th>
                 <th>Số lượng</th>
                 <th>Thành tiền</th>
-                <th>Hành động</th>
             </tr>
             <hr>
             <tbody class="chitiet_content">

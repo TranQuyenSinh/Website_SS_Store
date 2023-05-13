@@ -16,8 +16,12 @@
       success: function (data) {
         if (data.length > 0) {
           for (var i = 0; i < data.length; i++) {
+            var avatar = data[i].Avatar;
+            if (avatar == null) {
+              avatar = "0.jpg";
+            }
             var html = ` <div class='comment'>
-                            <img src='../../images/avatar_khachhang/${data[i].Avatar}' alt='Avatar' class='comment_avatar' />
+                            <img src='../../images/avatar_khachhang/${avatar}' alt='Avatar' class='comment_avatar' />
                             <div class='comment_info'>
                                 <p class='comment_name'>${data[i].TenHienThi}</p>
                                 <div class='star-rating'>`;

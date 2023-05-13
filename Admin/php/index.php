@@ -25,32 +25,32 @@ include_once 'connect.php';
         <h3 class="shop_title">SS Store</h3>
         <hr>
         <ul>
-            <li page="home">
+            <li onclick="switchTab(this, 'home.php')">
                 <a href="#">
                     <i class="fas fa-star"></i>
                     <p>Trang chủ</p>
                 </a>
             </li>
-            <li page="donhang">
+            <li onclick="switchTab(this, 'donhang.php')">
                 <a href="#">
                     <i class="fas fa-check"></i>
                     <p>Quản lý đơn hàng</p>
                 </a>
             </li>
-            <li page="sanpham">
+            <li onclick="switchTab(this, 'sanpham.php')">
                 <a href="#">
                     <i class="fas fa-box"></i>
                     <p>Quản lý sản phẩm</p>
                 </a>
             </li>
-            <li page="loaisanpham">
+            <li onclick="switchTab(this, 'loaisanpham.php')">
                 <a href="#">
                     <i class="fab fa-microsoft"></i>
                     <p>Quản lý loại sản phẩm</p>
                 </a>
             </li>
             <hr>
-            <li page="nguoidung">
+            <li onclick="switchTab(this, 'nguoidung.php')">
                 <a href="#">
                     <i class="fas fa-users"></i>
                     <p>Quản lý người dùng</p>
@@ -67,7 +67,7 @@ include_once 'connect.php';
                     <img src="../../images/avatar_khachhang/0.jpg" alt="">
                     <p>
                         <?php
-                            echo $_SESSION['TenHienThi'];
+                            echo $_SESSION['TenHienThiQuanTri'];
                         ?>
                     </p>
                     <a href="xulydangxuat.php" class="option">Đăng xuất</a>

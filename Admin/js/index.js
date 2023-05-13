@@ -12,24 +12,23 @@ function ShowPreviewImage(file_input, img_output) {
     reader.readAsDataURL(selectedFile);
 }
 
-  
+// chuyển tab
+function switchTab(listitem, page) {
+    $('.sidebar li').removeClass("selected");
+    $(listitem).addClass("selected");
+    $(".content_title").text($(listitem).find("p").text());
+    
+	$(".main_content").load(page)
+}
+
 $(document).ready(function () {
 	// mở menu đăng xuất
     $(".user_info").click(function (e) {
         $(".user_info .option").toggleClass("show");
     });
 
-	// chuyển tab
-    $(".sidebar li").click(function (e) {
-        $(".sidebar li").removeClass("selected");
-        $(this).addClass("selected");
-
-        $(".content_title").text($(this).find("p").text());
-
-		var page = $(this).attr('page');
-		$(".main_content").load(page + ".php")
-    });
+    
 
     // load lần đầu
-    $(".sidebar li").first().click();
+    switchTab($(".sidebar li").first(), 'home.php');
 });

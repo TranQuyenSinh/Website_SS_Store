@@ -21,7 +21,7 @@ $(document).ready(function () {
     $(".header_search_icons").click(function (e) {
         e.preventDefault();
         var search_text = $("input.header_search_bar").val();
-        let sql = `SELECT sp.MaSP, sp.TenSP, sp.DonGia, sp.TonKho, sp.SoLuongDaBan, lsp.TenLoaiSP 
+        let sql = `SELECT sp.HinhAnh, sp.MaSP, sp.TenSP, sp.DonGia, sp.TonKho, sp.SoLuongDaBan, lsp.TenLoaiSP 
                     FROM sanpham sp 
                     INNER JOIN loaisanpham lsp ON sp.MaLoaiSP = lsp.MaLoaiSP 
                     WHERE sp.TenSP LIKE '%${search_text}%' `;
@@ -54,6 +54,7 @@ $(document).ready(function () {
                         <td>${formatedDonGia}</td>
                         <td>${data[i].TonKho}</td>
                         <td>${data[i].SoLuongDaBan}</td>
+                        <td><img src='../../images/sanpham/${data[i].HinhAnh}' alt=''></td>
                         <td class='action-icons'>
                             <div class='action-icon-container'>
                                 <a href='#'>

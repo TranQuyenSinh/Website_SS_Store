@@ -2,8 +2,9 @@
     include_once "connect.php";
 ?>
 <link rel="stylesheet" href="../css/home.css">  
+<script src="../js/home.js"></script>
 <div class="card_container">
-    <a href="#" class="card">
+    <a href="#" class="card donhang_card" page="donhang.php?do=donchuaduyet">
         <i class="fas fa-file-invoice-dollar" style="color:#F3BB45;"></i>
         <div class="card_info">
             <span>Số đơn hàng chưa duyệt</span>
@@ -16,7 +17,7 @@
         </div>
     </a>
 
-    <a href="#" class="card">
+    <a href="#" class="card donhang_card" page="donhang.php?do=dondanggiao">
         <i class="fas fa-motorcycle" style="color:#6681af;"></i>
         <div class="card_info">
             <span>Số đơn hàng đang giao</span>
@@ -24,6 +25,19 @@
                 <?php
                     $sql_donhang_danggiao = "SELECT count(*) as 'SoLuongDonDangGiao' FROM `donhang` where TrangThai = 1";
                     echo $connect->query($sql_donhang_danggiao)->fetch_array(MYSQLI_ASSOC)['SoLuongDonDangGiao'];
+                ?>
+            </span>
+        </div>
+    </a>
+
+    <a href="#" class="card donhang_card" page="donhang.php">
+        <i class="fas fa-copy" style="color:#9d6dba;"></i>
+        <div class="card_info">
+            <span>Tổng số đơn hàng tháng này</span>
+            <span>
+                <?php
+                    $sql_donhang_count = "SELECT count(*) as 'SoLuongDon' FROM `donhang` where month(Time) = month(now())";
+                    echo $connect->query($sql_donhang_count)->fetch_array(MYSQLI_ASSOC)['SoLuongDon'];
                 ?>
             </span>
         </div>

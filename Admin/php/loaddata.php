@@ -1,12 +1,18 @@
 <?php
-  include_once 'connect.php';
-  $sql = $_POST['sql'];
-  $list_more = $connect->query($sql);
-  $data = array();
+include_once 'connect.php';
+include_once "return_error.php";
 
-  while($row = $list_more->fetch_array(MYSQLI_ASSOC)) {
-    $data[] = $row;
-  }
+$sql = $_POST['sql'];
+$list_more = $connect->query($sql);
 
-  // trả về dạng json
-  echo json_encode($data);
+
+if ($connect->error)
+  return_error($connect->error);
+
+$data = array();
+while ($row = $list_more->fetch_array(MYSQLI_ASSOC)) {
+  $data[] = $row;
+}
+
+// trả về dạng json
+echo json_encode($data);
